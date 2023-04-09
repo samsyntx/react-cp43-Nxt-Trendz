@@ -17,7 +17,55 @@ class App extends Component {
     cartList: [],
   }
 
-  //   TODO: Add your code for remove all cart items, increment cart item quantity, decrement cart item quantity, remove cart item
+  removeCartItem = uniqueId => {
+    if (uniqueId === undefined) {
+      this.setState({cartList: []})
+    } else {
+      const {cartList} = this.state
+      const filterList = cartList.filter(eachItem => eachItem.id !== uniqueId)
+      this.setState({cartList: filterList})
+    }
+  }
+
+  removeZeroQuantityItem = () => {
+    const {cartList} = this.state
+    if (cartList.length > 0) {
+      const cartListFilter = cartList.filter(eachItem => eachItem.quantity > 0)
+      this.setState({cartList: cartListFilter})
+    }
+  }
+
+  decrementCartItemQuantity = uniqueId => {
+    const {cartList} = this.state
+
+    if (cartList.length > 0) {
+      const decreaseCartQuantity = cartList.map(each => {
+        if (each.id === uniqueId) {
+          const quantity = each.quantity - 1
+          return {...each, quantity}
+        }
+        return each
+      })
+      this.setState(
+        {cartList: decreaseCartQuantity},
+        this.removeZeroQuantityItem,
+      )
+    }
+  }
+
+  incrementCartItemQuantity = uniqueId => {
+    const {cartList} = this.state
+    if (cartList.length > 0) {
+      const increaseCartQuantity = cartList.map(each => {
+        if (each.id === uniqueId) {
+          const quantity = each.quantity + 1
+          return {...each, quantity}
+        }
+        return each
+      })
+      this.setState({cartList: increaseCartQuantity})
+    }
+  }
 
   addCartItem = product => {
     const {cartList} = this.state
@@ -51,6 +99,8 @@ class App extends Component {
           cartList,
           addCartItem: this.addCartItem,
           removeCartItem: this.removeCartItem,
+          decrementCartItemQuantity: this.decrementCartItemQuantity,
+          incrementCartItemQuantity: this.incrementCartItemQuantity,
         }}
       >
         <Switch>

@@ -1,3 +1,7 @@
+button {
+  cursor: pointer;
+}
+
 .cart-container {
   display: flex;
   justify-content: center;
@@ -60,4 +64,12 @@
 }
 .main-container-for-cart-total {
   align-self: flex-end;
+}
+.cart-route-remove-all-heading {
+  color: #0b69ff;
+  font-size: 20px;
+  align-self: flex-end;
+  background: none;
+  font-weight: bold;
+  border: none;
 }
