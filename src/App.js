@@ -21,7 +21,6 @@ class App extends Component {
 
   addCartItem = product => {
     const {cartList} = this.state
-    console.log(product)
 
     if (cartList.length === 0) {
       this.setState({cartList: [product]})

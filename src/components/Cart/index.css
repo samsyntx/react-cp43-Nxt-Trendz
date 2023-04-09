@@ -37,4 +37,27 @@
   }
 }
 
-/* Write your CSS here */
+.cart-route-total-price-heading {
+  font-size: 15px;
+  color: #616e7c;
+}
+.cart-route-total-price {
+  color: black;
+  font-size: 23px;
+}
+.cart-route-total-price-paragraph {
+  color: #616e7c;
+  font-weight: 500;
+}
+.cart-route-total-price-button {
+  background: #0b69ff;
+  height: 35px;
+  width: 150px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.main-container-for-cart-total {
+  align-self: flex-end;
+}
