@@ -9,11 +9,11 @@ import './index.css'
 const Cart = () => (
   <CartContext.Consumer>
     {value => {
-      const {cartList, removeCartItem} = value
+      const {cartList, removeAllCartItems} = value
       const showEmptyView = cartList.length === 0
 
       const clickTORemoveAll = () => {
-        removeCartItem()
+        removeAllCartItems()
       }
 
       const calculateCartTotal = () => {

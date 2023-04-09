@@ -53,15 +53,7 @@ button {
   color: #616e7c;
   font-weight: 500;
 }
-.cart-route-total-price-button {
-  background: #0b69ff;
-  height: 35px;
-  width: 150px;
-  border: none;
-  color: white;
-  font-weight: bold;
-  border-radius: 5px;
-}
+
 .main-container-for-cart-total {
   align-self: flex-end;
 }
@@ -72,4 +64,13 @@ button {
   background: none;
   font-weight: bold;
   border: none;
+}
+.cart-route-total-price-button {
+  background: #0b69ff;
+  height: 35px;
+  width: 150px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
 }

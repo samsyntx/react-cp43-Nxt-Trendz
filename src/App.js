@@ -18,13 +18,13 @@ class App extends Component {
   }
 
   removeCartItem = uniqueId => {
-    if (uniqueId === undefined) {
-      this.setState({cartList: []})
-    } else {
-      const {cartList} = this.state
-      const filterList = cartList.filter(eachItem => eachItem.id !== uniqueId)
-      this.setState({cartList: filterList})
-    }
+    const {cartList} = this.state
+    const filterList = cartList.filter(eachItem => eachItem.id !== uniqueId)
+    this.setState({cartList: filterList})
+  }
+
+  removeAllCartItems = () => {
+    this.setState({cartList: []})
   }
 
   removeZeroQuantityItem = () => {
@@ -99,6 +99,7 @@ class App extends Component {
           cartList,
           addCartItem: this.addCartItem,
           removeCartItem: this.removeCartItem,
+          removeAllCartItems: this.removeAllCartItems,
           decrementCartItemQuantity: this.decrementCartItemQuantity,
           incrementCartItemQuantity: this.incrementCartItemQuantity,
         }}
